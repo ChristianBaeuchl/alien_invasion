@@ -7,3 +7,5 @@ class Settings:
         self.screen_width = 1600
         self.screen_height = 900
         self.bg_color = (30, 130, 210) # it's blue
+        # Ship settings
+        self.ship_type = 'images/ship1_yellow.bmp'
