@@ -9,3 +9,4 @@ class Settings:
         self.bg_color = (30, 130, 210) # it's blue
         # Ship settings
         self.ship_type = 'images/ship1_yellow.bmp'
+        self.ship_speed = 2.5
