@@ -69,7 +69,9 @@ class AlienInvasion:
                 self.settings.screen_height = self.settings.default_height
                 self.fullscreen = False
                 
-            # Reset the ship to mid-bottom after entering fullscreen mode
+            # Update ship's screen reference
+            self.ship.screen = self.screen
+            self.ship.screen_rect = self.screen.get_rect()
             self.ship.center_ship()
     
     def check_keyup_events(self, event):
