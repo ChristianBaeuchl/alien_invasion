@@ -54,6 +54,7 @@ class AlienInvasion:
             self._check_events()
             self._update_screen()
             self._update_bullets()
+            self._update_aliens()
             self.ship.update()
             self.clock.tick(60)
     
@@ -118,6 +119,10 @@ class AlienInvasion:
             if bullet.rect.bottom <= 0:
                 self.bullets.remove(bullet)
             print(len(self.bullets))
+    
+    def _update_aliens(self):
+        """Update the positions of aliens in the fleet."""
+        self.aliens.update()
     
     def _update_screen(self):
         """Update images on the screen and flip to the new screen."""
