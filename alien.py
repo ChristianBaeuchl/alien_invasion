@@ -24,5 +24,4 @@ class Alien(Sprite):
     def update(self):
         """Move the alien to the right"""
         self.x += self.settings.alien_speed
-        self.rect.x = self.x
-        
+        self.rect.x = self.x  
