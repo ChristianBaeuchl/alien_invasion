@@ -14,9 +14,10 @@ class Settings:
         # Ship settings
         self.ship_type = 'images/ship1_yellow.bmp'
         self.ship_speed = 5
+        self.ship_limit = 3
 
         # Bullet settings
-        self.bullet_speed = 8
+        self.bullet_speed = 2.5
         self.bullet_width = 7
         self.bullet_height = 7
         self.bullet_color = (250, 60, 60)
