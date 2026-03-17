@@ -17,15 +17,16 @@ class Settings:
         self.ship_limit = 3
 
         # Bullet settings
-  
         self.bullet_width = 3
         self.bullet_height = 6
         self.bullet_color = (250, 60, 60)
         self.bullets_allowed = 10
 
         # Alien settings
-        
         self.fleet_drop_speed = 10
+        
+        # Scoring settings
+        self.alien_points = 50
         
         # How quickly the game speeds up
         self.speedup_scale = 1.1
