@@ -9,7 +9,7 @@ class Settings:
         self.default_height = 900
         self.screen_width = self.default_width
         self.screen_height = self.default_height
-        self.bg_color = (30, 130, 210) # it's blue
+        self.bg_color = (211, 211, 211) # it's grey
 
         # Ship settings
         self.ship_type = 'images/ship1_yellow_small.bmp'
@@ -31,6 +31,9 @@ class Settings:
         # How quickly the game speeds up
         self.speedup_scale = 1.1
         
+        # How quickly the alien point values increas
+        self.score_scale = 1.5
+        
         self.initialize_dynamic_settings()
     
         
@@ -49,3 +52,4 @@ class Settings:
         self.bullet_speed *= self.speedup_scale
         self.alien_speed *= self.speedup_scale
         
+        self.alien_points = int(self.alien_points * self.score_scale)
