@@ -1,4 +1,5 @@
 import sys
+import os
 import pygame
 from time import sleep
 from settings import Settings
@@ -79,7 +80,8 @@ class AlienInvasion:
     def _check_events(self):
         """Respond to key presses and mouse events."""
         for event in pygame.event.get():
-            if event.type == pygame.QUIT: 
+            if event.type == pygame.QUIT:
+                self._update_high_score(self.stats.high_score) 
                 sys.exit()
             elif event.type == pygame.KEYDOWN:
                 self.check_keydown_events(event)
@@ -123,6 +125,7 @@ class AlienInvasion:
         elif event.key == pygame.K_LEFT:
             self.ship.moving_left = True
         elif event.key == pygame.K_q:
+            self._update_high_score(self.stats.high_score) 
             sys.exit()
         elif event.key == pygame.K_SPACE:
             self._fire_bullet()
@@ -244,7 +247,22 @@ class AlienInvasion:
                 # Treat this the same as if the ship got hit.
                 self._ship_hit()
                 break
-            
+    
+    def _update_high_score(self, current_score):
+        file_name = "highscore.txt"
+        high_score = 0
+
+        # Try to read the existing high score
+        if os.path.exists(file_name):
+            with open(file_name, "r") as f:
+                content = f.read().strip()
+                if content:
+                    high_score = int(content)
+
+        # Check if the current score is a new record and overwrite it
+        if current_score > high_score:
+            with open(file_name, "w") as f:
+                f.write(str(current_score))    
         
     def _update_screen(self):
         """Update images on the screen and flip to the new screen."""
